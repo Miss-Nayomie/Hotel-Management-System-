@@ -39,4 +39,7 @@ public class User implements Serializable {
 
     @Column(name = "Role")
     private String role;
+
+    @Column(name = "Time")
+    private String time;
 }
