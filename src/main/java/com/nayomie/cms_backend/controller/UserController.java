@@ -1,10 +1,12 @@
 package com.nayomie.cms_backend.controller;
 
+import com.nayomie.cms_backend.wrapper.UserWrapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
 import java.util.Map;
 
 @RequestMapping(path = "/user")
@@ -12,4 +14,7 @@ public interface UserController {
 
     @PostMapping(path = "/signup")
     public ResponseEntity<String> signUp(@RequestBody(required = true)Map<String,String> requestMap);
+
+    @GetMapping(path = "/get")
+    public ResponseEntity<List<UserWrapper>> getAllUser();
 }
